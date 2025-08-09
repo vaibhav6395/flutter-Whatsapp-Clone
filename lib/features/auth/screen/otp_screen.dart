@@ -32,10 +32,12 @@ class OtpScreen extends ConsumerWidget {
             const Text("SMS is sended with otp", textAlign: TextAlign.center),
             SizedBox(
               width: size.width * 0.5,
-              child: TextField(
+              child: TextField(style: TextStyle(fontSize: 32,letterSpacing: 10),
+                textInputAction: TextInputAction.done,
                 decoration: const InputDecoration(
                   hintText: '- - - - - -',
-                  hintStyle: TextStyle(fontSize: 30, letterSpacing: 4),
+                  hintStyle: TextStyle(fontSize: 32, letterSpacing: 8),
+                  
                 ),
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
