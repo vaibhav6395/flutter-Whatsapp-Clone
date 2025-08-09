@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clonee/colors.dart';
+import 'package:whatsapp_clonee/select-contacts/screen/select_contact_screen.dart';
 import 'package:whatsapp_clonee/widgets/contacts_list.dart';
 
 
 class MobileLayoutScreen extends StatelessWidget {
   const MobileLayoutScreen({super.key});
 
+
+void NavigateToSelectScreen(BuildContext context){
+    Navigator.pushNamed(context, SelectContactScreen.Routename);
+}
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -56,7 +61,7 @@ class MobileLayoutScreen extends StatelessWidget {
         ),
         body: const ContactsList(),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: ()=>NavigateToSelectScreen(context),
           backgroundColor: tabColor,
           child: const Icon(
             Icons.comment,

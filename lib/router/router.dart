@@ -3,6 +3,7 @@ import 'package:whatsapp_clonee/common/widgets/errorbody.dart';
 import 'package:whatsapp_clonee/features/auth/screen/loginscreen.dart';
 import 'package:whatsapp_clonee/features/auth/screen/otp_screen.dart';
 import 'package:whatsapp_clonee/features/auth/screen/user_information_screen.dart';
+import 'package:whatsapp_clonee/select-contacts/screen/select_contact_screen.dart';
 
 Route<dynamic> genereatedRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -10,10 +11,15 @@ Route<dynamic> genereatedRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const Loginscreen());
     case OtpScreen.Routename:
       final verificationid = settings.arguments as String;
-      return MaterialPageRoute(builder: (context) => OtpScreen(verificationid: verificationid));
-       case UserInformationScreen.Routename:
-      return MaterialPageRoute(builder: (context) => const UserInformationScreen());
-      
+      return MaterialPageRoute(
+        builder: (context) => OtpScreen(verificationid: verificationid),
+      );
+    case UserInformationScreen.Routename:
+      return MaterialPageRoute(
+        builder: (context) => const UserInformationScreen(),
+      );
+    case SelectContactScreen.Routename:
+      return MaterialPageRoute(builder: (context) => const SelectContactScreen());
 
     default:
       return MaterialPageRoute(
